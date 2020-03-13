@@ -61,6 +61,8 @@ if (window.localStorage.getItem("BGM_play") == null) {
         if (result.value) {
             window.localStorage.setItem("BGM_play", true);
             ap.play();
+        } else {
+            window.localStorage.setItem("BGM_play", "false");
         }
     })
 }
