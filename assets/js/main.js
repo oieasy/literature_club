@@ -79,7 +79,11 @@ fetch('https://v1.hitokoto.cn?c=k&encode=json')
     .then(data => {
         const hitokoto = document.getElementById('hitokoto');
         console.log(data)
-        hitokoto.innerText = data.hitokoto + "    ——" + data.from_who;
+        if (data.from_who == null) {
+            hitokoto.innerText = data.hitokoto + "    ——" + data.from;
+        } else {
+            hitokoto.innerText = data.hitokoto + "    ——" + data.from_who;
+        }
     })
     .catch(err => Swal.fire({
         title: '出错了',
