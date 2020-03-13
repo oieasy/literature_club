@@ -72,3 +72,17 @@ if (window.localStorage.getItem("BGM_play") == "true") {
 ap.on('pause', function () {
     window.localStorage.setItem("BGM_play", false);
 })
+
+//Hitokoto
+fetch('https://v1.hitokoto.cn?c=k&encode=json')
+    .then(response => response.json())
+    .then(data => {
+        const hitokoto = document.getElementById('hitokoto');
+        console.log(data)
+        hitokoto.innerText = data.hitokoto + "    ——" + data.from_who;
+    })
+    .catch(err => Swal.fire({
+        title: '出错了',
+        text: "无法从ひとこと获取信息",
+        icon: 'warning'
+    }));
