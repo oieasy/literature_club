@@ -1,3 +1,7 @@
+---
+ @import "jekyll-theme-slate"
+---
+
 # 文学社纲领
 ## 序言
 
