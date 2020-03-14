@@ -74,7 +74,7 @@ ap.on('pause', function () {
 })
 
 //Hitokoto
-fetch('https://v1.hitokoto.cn?c=k&encode=json')
+fetch('https://v1.hitokoto.cn?c=k&c=d&encode=json')
     .then(response => response.json())
     .then(data => {
         const hitokoto = document.getElementById('hitokoto');
