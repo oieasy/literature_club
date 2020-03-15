@@ -28,5 +28,9 @@
     "FOLLOW_US": "フォロー",
     "FOLLOW_US_NOT_AVAILABLE": "ご覧いただけません",
     "SUBSCRIBE": "購読する",
-    "SUBSCRIBE_RSS": "RSSフィード"
+    "SUBSCRIBE_RSS": "RSSフィード",
+    "MUSIC_PLAY": "音楽の再生",
+    "MUSIC_ASK": "おすすめの音楽を再生しますか？",
+    "MUSIC_CONFIRM": "はい",
+    "MUSIC_CANCEL": "いいえ"
 }

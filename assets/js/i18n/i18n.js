@@ -1,7 +1,7 @@
 
 if (window.localStorage.getItem("Lang") == null)
     // if (["zh_CN", "zh_TW", "en", "ja"].indexOf(navigator.language))
-    changeLanguage("en");
+    hashChange();
 else
     changeLanguage(window.localStorage.getItem("Lang"));
 //监听地址栏
@@ -11,6 +11,8 @@ function hashChange(writeLocalStorage = false) {
     str = url.substring(index + 1, url.length);
     if (["zh_CN", "zh_TW", "en", "ja"].indexOf(str) !== -1) {
         changeLanguage(str, true);
+    } else {
+        changeLanguage("en");
     }
 }
 function changeLanguage(Lang, notify = false) {
@@ -30,6 +32,25 @@ function changeLanguage(Lang, notify = false) {
                 let this_lang = $(this).data("lang");
                 $(this).html(tr[this_lang]);
             })
+            if (window.localStorage.getItem("BGM_play") == null) {
+                Swal.fire({
+                    title: tr.MUSIC_PLAY,
+                    text: tr.MUSIC_ASK,
+                    icon: 'info',
+                    showCancelButton: true,
+                    confirmButtonColor: '#1685a9',
+                    cancelButtonColor: '',
+                    confirmButtonText: tr.MUSIC_CONFIRM,
+                    cancelButtonText: tr.MUSIC_CANCEL
+                }).then((result) => {
+                    if (result.value) {
+                        window.localStorage.setItem("BGM_play", true);
+                        ap.play();
+                    } else {
+                        window.localStorage.setItem("BGM_play", "false");
+                    }
+                })
+            }
         },
         error: function () {
             Swal.fire({

@@ -28,5 +28,9 @@
     "FOLLOW_US": "Follow Us",
     "FOLLOW_US_NOT_AVAILABLE": "Not Available",
     "SUBSCRIBE": "Subscribe",
-    "SUBSCRIBE_RSS": "RSS Feed"
+    "SUBSCRIBE_RSS": "RSS Feed",
+    "MUSIC_PLAY": "Music Play",
+    "MUSIC_ASK": "Play our featured music?",
+    "MUSIC_CONFIRM": "OK",
+    "MUSIC_CANCEL": "No, Thanks"
 }

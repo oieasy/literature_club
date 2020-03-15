@@ -47,25 +47,6 @@ const ap = new APlayer({
     }]
 });
 
-if (window.localStorage.getItem("BGM_play") == null) {
-    Swal.fire({
-        title: '音乐播放',
-        text: "是否需要播放我们精选的乐曲呢？",
-        icon: 'info',
-        showCancelButton: true,
-        confirmButtonColor: '#1685a9',
-        cancelButtonColor: '',
-        confirmButtonText: '好的',
-        cancelButtonText: '不用了'
-    }).then((result) => {
-        if (result.value) {
-            window.localStorage.setItem("BGM_play", true);
-            ap.play();
-        } else {
-            window.localStorage.setItem("BGM_play", "false");
-        }
-    })
-}
 if (window.localStorage.getItem("BGM_play") == "true") {
     ap.play();
 }

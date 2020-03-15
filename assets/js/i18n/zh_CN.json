@@ -28,5 +28,9 @@
     "FOLLOW_US": "关注我们",
     "FOLLOW_US_NOT_AVAILABLE": "暂不支持",
     "SUBSCRIBE": "订阅",
-    "SUBSCRIBE_RSS": "RSS 订阅"
+    "SUBSCRIBE_RSS": "RSS 订阅",
+    "MUSIC_PLAY": "音乐播放",
+    "MUSIC_ASK": "是否需要播放我们精选的乐曲呢？",
+    "MUSIC_CONFIRM": "好的",
+    "MUSIC_CANCEL": "不用了"
 }
