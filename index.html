@@ -2,11 +2,11 @@
 <html lang="zh_CN">
 
 <head>
-    <title>首页 ~ Literature Club ~ 文学部</title>
+    <title> ~ Literature Club ~ </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link
-        href="https://fonts.loli.net/css?family=Noto+Sans+SC|Courgette|Indie+Flower|Ma+Shan+Zheng|Open+Sans:300,400,700&display=swap"
+        href="https://fonts.loli.net/css?family=Noto+Sans+SC|Courgette|Noto+Sans+JP|Indie+Flower|Ma+Shan+Zheng|Open+Sans:300,400,700&display=swap"
         rel="stylesheet">
     <base href="assets/">
     <link rel="stylesheet" href="fonts/icomoon/style.css">
@@ -46,7 +46,7 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-6 col-xl-2">
-                        <h1 class="mb-0 site-logo"><a href="/index.html" class="h2 mb-0"
+                        <h1 class="mb-0 site-logo"><a href="/" class="h2 mb-0"
                                 style="font-family: 'Courgette', cursive;">Literature<span class="
                                 text-primary">.</span>
                             </a></h1>
@@ -54,19 +54,29 @@
                     <div class="col-12 col-md-10 d-none d-xl-block">
                         <nav class="site-navigation position-relative text-right" role="navigation">
                             <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
-                                <li><a href="/#home-section" class="nav-link">首页</a></li>
+                                <li><a href="/#home-section" class="nav-link" data-lang="HOME">首页</a></li>
                                 <li class="has-children">
-                                    <a href="/#about-section" class="nav-link">关于</a>
+                                    <a href="/#about-section" class="nav-link" data-lang="ABOUT">关于</a>
                                     <ul class="dropdown">
-                                        <li><a href="/#team-section" class="nav-link">成员</a></li>
-                                        <li><a href="/#faq-section" class="nav-link">FAQ</a></li>
+                                        <li><a href="/#team-section" class="nav-link" data-lang="MEMBER">成员</a></li>
+                                        <li><a href="/#faq-section" class="nav-link" data-lang="FAQ">FAQ</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="https://xn--2qq64k.xn--48sp9u.club/" target="_blank">作品</a></li>
-                                <li><a href="/#services-section" class="nav-link">Feature</a></li>
+                                <li><a href="https://xn--2qq64k.xn--48sp9u.club/" target="_blank"
+                                        data-lang="WORKS">作品</a></li>
+                                <li><a href="/#services-section" class="nav-link" data-lang="FEATURE">Feature</a></li>
                                 <!--<li><a href="#testimonials-section" class="nav-link">评价</a></li>--->
-                                <li><a href="/#blog-section" class="nav-link">文章</a></li>
-                                <li><a href="/#contact-section" class="nav-link">交流</a></li>
+                                <!-- <li><a href="/#blog-section" class="nav-link">文章</a></li> -->
+                                <li><a href="/#contact-section" class="nav-link" data-lang="CONTACT">联系</a></li>
+                                <li class="has-children">
+                                    <a href="/#i18n" class="nav-link">Language</a>
+                                    <ul class="dropdown">
+                                        <li><a href="/#zh_CN" class="nav-link">简体中文</a></li>
+                                        <li><a href="/#zh_TW" class="nav-link">繁體中文</a></li>
+                                        <li><a href="/#en" class="nav-link">English</a></li>
+                                        <li><a href="/#ja" class="nav-link">日本語</a></li>
+                                    </ul>
+                                </li>
                             </ul>
                         </nav>
                     </div>
@@ -81,13 +91,16 @@
             <div class="container">
                 <div class="row align-items-center justify-content-center">
                     <div class="col-md-8 mt-lg-5 text-center">
-                        <h1 class="text-uppercase" data-aos="fade-up" style="font-family: 'Indie Flower', cursive;">
+                        <h1 data-lang="WELCOME_TO_LITERATURE_CLUB" class="text-uppercase" data-aos="fade-up"
+                            style="font-family: 'Indie Flower', cursive;">
                             Welcome to Literature Club
                         </h1>
                         <p id="hitokoto" class="mb-5 desc" data-aos="fade-up" data-aos-delay="100"
-                            style="font-family: 'Ma Shan Zheng', cursive;">欢迎来到FXSHLC文学社！</p>
+                            style="font-family: 'Ma Shan Zheng', cursive;" data-lang="DEFAULT_HITOKOTO">欢迎来到FXSHLC文学社！
+                        </p>
                         <div data-aos="fade-up" data-aos-delay="100">
-                            <a href="/#about-section" class="btn smoothscroll btn-primary mr-2 mb-2">了解更多</a>
+                            <a href="/#about-section" class="btn smoothscroll btn-primary mr-2 mb-2"
+                                data-lang="LEARN_MORE">了解更多</a>
                         </div>
                     </div>
                 </div>
@@ -103,7 +116,7 @@
             <div class="container">
                 <div class="row mb-5">
                     <div class="col-12 text-center" data-aos="fade">
-                        <h2 class="section-title mb-3">关于我们</h2>
+                        <h2 class="section-title mb-3" data-lang="ABOUT_US">关于我们</h2>
                     </div>
                 </div>
                 <div class="row">
@@ -114,14 +127,14 @@
                     </div>
                     <div class="col-lg-5 ml-auto" data-aos="fade-up" data-aos-delay="100">
                         <div class="mb-4">
-                            <h3 class="h3 mb-4 text-black">一个年轻向上&向往苍穹的社团</h3>
-                            <p>FXSHLC文学部是一个开放、自由、协作的社团.</p>
+                            <h3 class="h3 mb-4 text-black" data-lang="ABOUT_US_TITLE">一个年轻向上&向往苍穹的社团</h3>
+                            <p data-lang="ABOUT_US_DETAIL">FXSHLC文学部是一个开放、自由、协作的社团.</p>
                         </div>
                         <div class="mb-4">
                             <ul class="list-unstyled ul-check success">
-                                <li>交流分享文学艺术</li>
-                                <li>自由创作&发表作品</li>
-                                <li>等待您的加入……</li>
+                                <li data-lang="ABOUT_US_DETAIL_ONE">交流分享文学艺术</li>
+                                <li data-lang="ABOUT_US_DETAIL_TWO">自由创作&发表作品</li>
+                                <li data-lang="ABOUT_US_DETAIL_THREE">等待您的加入……</li>
                             </ul>
                         </div>
                     </div>
@@ -628,35 +641,39 @@
                     <div class="col-md-9">
                         <div class="row">
                             <div class="col-md-5">
-                                <h2 class="footer-heading mb-4">关于本站</h2>
-                                <p>本站为FXSH文学部的官方网站，与阜新市高级中学无隶属关系。图片提供致谢<a
+                                <h2 class="footer-heading mb-4" data-lang="FOOTER_ABOUT_THE_SITE">关于本站</h2>
+                                <p data-lang="FOOTER_ABOUT_THE_SITE_DETAIL">本站为FXSH文学部的官方网站，与阜新市高级中学无隶属关系。图片提供致谢<a
                                         href="https://www.pixiv.net/users/30795/artworks" target="_blank">フタバ</a>、<a
                                         href="https://twitter.com/hanekoto2424" target="_blank">はねこと</a>。文案致谢：<a
                                         href="https://developer.hitokoto.cn/sentence/" target="_blank">一言</a>。
                                 </p>
                             </div>
                             <div class="col-md-3 ml-auto">
-                                <h2 class="footer-heading mb-4">快捷访问</h2>
+                                <h2 class="footer-heading mb-4" data-lang="QUICK_ACCESS">快捷访问</h2>
                                 <ul class="list-unstyled">
-                                    <li><a href="/#home-section" class="smoothscroll">首页</a></li>
-                                    <li><a href="https://xn--2qq64k.xn--48sp9u.club/" target="_blank">作品</a></li>
-                                    <li><a href="/#about-section" class="smoothscroll">关于</a></li>
-                                    <li><a href="/docs" class="smoothscroll">《文学社纲领》</a></li>
+                                    <li><a href="/#home-section" class="smoothscroll"
+                                            data-lang="QUICK_ACCESS_HOME">首页</a></li>
+                                    <li><a href="https://xn--2qq64k.xn--48sp9u.club/" target="_blank"
+                                            data-lang="QUICK_ACCESS_WORKS">作品</a></li>
+                                    <li><a href="/#about-section" class="smoothscroll"
+                                            data-lang="QUICK_ACCESS_ABOUT">关于</a></li>
+                                    <li><a href="/docs" class="smoothscroll"
+                                            data-lang="QUICK_ACCESS_REGULATION">《文学社纲领》</a></li>
                                 </ul>
                             </div>
                             <div class="col-md-3">
-                                <h2 class="footer-heading mb-4">关注我们</h2>
+                                <h2 class="footer-heading mb-4" data-lang="FOLLOW_US">关注我们</h2>
                                 <!-- <a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
                                 <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
                                 <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
                                 <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a> -->
-                                暂不支持
+                                <p data-lang="FOLLOW_US_NOT_AVAILABLE">暂不支持</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-3">
-                        <h2 class="footer-heading mb-4">订阅</h2>
-                        <a href="https://xn--2qq64k.xn--48sp9u.club/feed.xml">RSS Feed</a>
+                        <h2 class="footer-heading mb-4" data-lang="SUBSCRIBE">订阅</h2>
+                        <a href="https://xn--2qq64k.xn--48sp9u.club/feed.xml" data-lang="SUBSCRIBE_RSS">RSS Feed</a>
                     </div>
                 </div>
                 <div class="row pt-5 mt-5 text-center">
@@ -697,6 +714,7 @@
     <script src="js/jquery.fancybox.min.js"></script>
     <script src="js/jquery.sticky.js"></script>
     <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/i18n/i18n.js"></script>
     <script src="js/main.js"></script>
 
 </body>

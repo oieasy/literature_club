@@ -74,19 +74,19 @@ ap.on('pause', function () {
 })
 
 //Hitokoto
-fetch('https://v1.hitokoto.cn?c=k&c=d&encode=json')
-    .then(response => response.json())
-    .then(data => {
-        const hitokoto = document.getElementById('hitokoto');
-        console.log(data)
-        if (data.from_who == null) {
-            hitokoto.innerText = data.hitokoto + "    ——" + data.from;
-        } else {
-            hitokoto.innerText = data.hitokoto + "    ——" + data.from_who;
-        }
-    })
-    .catch(err => Swal.fire({
-        title: '出错了',
-        text: "无法从ひとこと获取信息",
-        icon: 'warning'
-    }));
+// fetch('https://v1.hitokoto.cn?c=k&c=d&encode=json')
+//     .then(response => response.json())
+//     .then(data => {
+//         const hitokoto = document.getElementById('hitokoto');
+//         console.log(data)
+//         if (data.from_who == null) {
+//             hitokoto.innerText = data.hitokoto + "    ——" + data.from;
+//         } else {
+//             hitokoto.innerText = data.hitokoto + "    ——" + data.from_who;
+//         }
+//     })
+//     .catch(err => Swal.fire({
+//         title: '出错了',
+//         text: "无法从ひとこと获取信息",
+//         icon: 'warning'
+//     }));
