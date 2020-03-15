@@ -1,9 +1,11 @@
 
-if (window.localStorage.getItem("Lang") == null)
+if (window.localStorage.getItem("Lang") == null) {
     // if (["zh_CN", "zh_TW", "en", "ja"].indexOf(navigator.language))
     hashChange();
-else
+    changeLanguage("en");
+} else {
     changeLanguage(window.localStorage.getItem("Lang"));
+}
 //监听地址栏
 function hashChange(writeLocalStorage = false) {
     let url = window.location.href;
@@ -11,8 +13,6 @@ function hashChange(writeLocalStorage = false) {
     str = url.substring(index + 1, url.length);
     if (["zh_CN", "zh_TW", "en", "ja"].indexOf(str) !== -1) {
         changeLanguage(str, true);
-    } else {
-        changeLanguage("en");
     }
 }
 function changeLanguage(Lang, notify = false) {
