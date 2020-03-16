@@ -1,13 +1,29 @@
 
 if (window.localStorage.getItem("Lang") == null) {
-    // if (["zh_CN", "zh_TW", "en", "ja"].indexOf(navigator.language))
+    switch (navigator.language) {
+        //这段好笨啊，但懒得用聪明方法了
+        case "zh_CN":
+            changeLanguage("zh_CN");
+            break;
+        case "zh_TW":
+            changeLanguage("zh_TW");
+            break;
+        case "zh_HK":
+            changeLanguage("zh_TW");
+            break;
+        case "ja":
+            changeLanguage("ja");
+            break;
+        default:
+            changeLanguage("en");
+            break;
+    }
     hashChange();
-    changeLanguage("en");
 } else {
     changeLanguage(window.localStorage.getItem("Lang"));
 }
 //监听地址栏
-function hashChange(writeLocalStorage = false) {
+function hashChange() {
     let url = window.location.href;
     let index = url.lastIndexOf("\#");
     str = url.substring(index + 1, url.length);
@@ -28,10 +44,12 @@ function changeLanguage(Lang, notify = false) {
             }
             window.localStorage.setItem("Lang", Lang);
             document.title = tr.DOC_TITLE;
+            $("html").attr("lang", Lang)
             $('[data-lang]').each(function () {
                 let this_lang = $(this).data("lang");
                 $(this).html(tr[this_lang]);
             })
+            hitokoto(Lang);
             if (window.localStorage.getItem("BGM_play") == null) {
                 Swal.fire({
                     title: tr.MUSIC_PLAY,
@@ -51,6 +69,7 @@ function changeLanguage(Lang, notify = false) {
                     }
                 })
             }
+
         },
         error: function () {
             Swal.fire({
@@ -59,6 +78,22 @@ function changeLanguage(Lang, notify = false) {
             })
         }
     });
+}
+function hitokoto(lang) {
+    $.ajax({
+        type: "get",
+        url: "js/hitokoto/" + lang + ".json",
+        success: function (response) {
+            let index = Math.floor((Math.random() * response.hitokoto.length));
+            console.log(response.hitokoto[index]);
+            $("#hitokoto").text(response.hitokoto[index].c + "——" + response.hitokoto[index].a);
+        }
+    });
+}
+function font(lnag) {
+    const font = [
+        "zh_CN"
+    ];
 }
 if (('onhashchange' in window) && ((typeof document.documentMode === 'undefined') || document.documentMode == 8)) {
     window.onhashchange = hashChange;
