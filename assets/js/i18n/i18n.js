@@ -50,6 +50,7 @@ function changeLanguage(Lang, notify = false) {
                 $(this).html(tr[this_lang]);
             })
             hitokoto(Lang);
+            font(Lang);
             if (window.localStorage.getItem("BGM_play") == null) {
                 Swal.fire({
                     title: tr.MUSIC_PLAY,
@@ -90,10 +91,16 @@ function hitokoto(lang) {
         }
     });
 }
-function font(lnag) {
-    const font = [
-        "zh_CN"
-    ];
+function font(lang) {
+    //手动定义字体草い
+    const font = {
+        zh_CN: "Ma Shan Zheng",
+        zh_TW: "Noto Sans TC",
+        ja: "Noto San JP",
+        en: "Courgette"
+    };
+    $("#hitokoto").attr("style", "font-family: '" + font[lang] + "', cursive;")
+
 }
 if (('onhashchange' in window) && ((typeof document.documentMode === 'undefined') || document.documentMode == 8)) {
     window.onhashchange = hashChange;
