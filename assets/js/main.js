@@ -195,37 +195,12 @@ jQuery(document).ready(function ($) {
             scrollProperty: 'scroll'
         });
     };
-    var siteCountDown = function () {
-        $('#date-countdown').countdown('2020/10/10', function (event) {
-            var $this = $(this).html(event.strftime('' + '<span class="countdown-block"><span class="label">%w</span> weeks </span>' + '<span class="countdown-block"><span class="label">%d</span> days </span>' + '<span class="countdown-block"><span class="label">%H</span> hr </span>' + '<span class="countdown-block"><span class="label">%M</span> min </span>' + '<span class="countdown-block"><span class="label">%S</span> sec</span>'));
-        });
-    };
-    siteCountDown();
-    var siteDatePicker = function () {
-        if ($('.datepicker').length > 0) {
-            $('.datepicker').datepicker();
-        }
-    };
-    siteDatePicker();
     var siteSticky = function () {
         $(".js-sticky-header").sticky({
             topSpacing: 0
         });
     };
     siteSticky();
-    // var OnePageNavigation = function () {
-    //     var navToggler = $('.site-menu-toggle');
-    //     $("body").on("click", ".main-menu li a[href^='#'], .smoothscroll[href^='#'], .site-mobile-menu .site-nav-wrap li a", function (e) {
-    //         e.preventDefault();
-    //         var hash = this.hash;
-    //         $('html, body').animate({
-    //             'scrollTop': $(hash).offset().top
-    //         }, 600, 'easeInOutExpo', function () {
-    //             window.location.hash = hash;
-    //         });
-    //     });
-    // };
-    // OnePageNavigation();
     var siteScroll = function () {
         $(window).scroll(function () {
             var st = $(this).scrollTop();
@@ -237,29 +212,6 @@ jQuery(document).ready(function ($) {
         })
     };
     siteScroll();
-    var siteIstotope = function () {
-        var $container = $('#posts').isotope({
-            itemSelector: '.item',
-            isFitWidth: true
-        });
-        $(window).resize(function () {
-            $container.isotope({
-                columnWidth: '.col-sm-3'
-            });
-        });
-        $container.isotope({
-            filter: '*'
-        });
-        $('#filters').on('click', 'button', function () {
-            var filterValue = $(this).attr('data-filter');
-            $container.isotope({
-                filter: filterValue
-            });
-            $('#filters button').removeClass('active');
-            $(this).addClass('active');
-        });
-    }
-    siteIstotope();
     $('.fancybox').on('click', function () {
         var visibleLinks = $('.fancybox');
         $.fancybox.open(visibleLinks, {}, visibleLinks.index(this));
@@ -285,21 +237,3 @@ if (window.localStorage.getItem("BGM_play") == "true") {
 ap.on('pause', function () {
     window.localStorage.setItem("BGM_play", false);
 })
-
-//Hitokoto
-// fetch('https://v1.hitokoto.cn?c=k&c=d&encode=json')
-//     .then(response => response.json())
-//     .then(data => {
-//         const hitokoto = document.getElementById('hitokoto');
-//         console.log(data)
-//         if (data.from_who == null) {
-//             hitokoto.innerText = data.hitokoto + "    ——" + data.from;
-//         } else {
-//             hitokoto.innerText = data.hitokoto + "    ——" + data.from_who;
-//         }
-//     })
-//     .catch(err => Swal.fire({
-//         title: '出错了',
-//         text: "无法从ひとこと获取信息",
-//         icon: 'warning'
-//     }));
