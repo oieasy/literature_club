@@ -96,7 +96,7 @@ function font(lang) {
     const font = {
         zh_CN: "Ma Shan Zheng",
         zh_TW: "Noto Sans TC",
-        ja: "Noto San JP",
+        ja: "Noto San JP, Georgia, \"游明朝\", \"Yu Mincho\", YuMincho, \"ヒラギノ明朝 Pro\"",
         en: "Courgette"
     };
     $("#hitokoto").attr("style", "font-family: '" + font[lang] + "', cursive;")
