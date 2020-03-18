@@ -237,3 +237,5 @@ if (window.localStorage.getItem("BGM_play") == "true") {
 ap.on('pause', function () {
     window.localStorage.setItem("BGM_play", false);
 })
+
+$("#year").text(new Date().getFullYear());
