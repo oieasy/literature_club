@@ -226,8 +226,8 @@ const ap = new APlayer({
     audio: [{
         name: 'Ohayou Sayori',
         artist: 'Dan Salvato',
-        url: 'media/DDLC_Ohayou_Sayori.mp3',
-        cover: 'images/DDLC.jpg',
+        url: i18n_burl+'media/DDLC_Ohayou_Sayori.mp3',
+        cover: i18n_burl+'images/DDLC.jpg',
     }]
 });
 
