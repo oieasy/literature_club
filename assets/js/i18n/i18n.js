@@ -34,7 +34,7 @@ function hashChange() {
 function changeLanguage(Lang, notify = false) {
     $.ajax({
         type: "get",
-        url: "js/i18n/" + Lang + ".json",
+        url: i18n_burl+"js/i18n/" + Lang + ".json",
         success: function (tr) {
             if (notify) {
                 Swal.fire({
