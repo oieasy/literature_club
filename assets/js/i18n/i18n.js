@@ -83,7 +83,7 @@ function changeLanguage(Lang, notify = false) {
 function hitokoto(lang) {
     $.ajax({
         type: "get",
-        url: "js/hitokoto/" + lang + ".json",
+        url: i18n_burl+"js/hitokoto/" + lang + ".json",
         success: function (response) {
             let index = Math.floor((Math.random() * response.hitokoto.length));
             console.log(response.hitokoto[index]);
