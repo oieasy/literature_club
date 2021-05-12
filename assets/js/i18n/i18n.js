@@ -28,7 +28,9 @@ function hashChange() {
     let index = url.lastIndexOf("\#");
     str = url.substring(index + 1, url.length);
     if (["zh_CN", "zh_TW", "en", "ja"].indexOf(str) !== -1) {
-        changeLanguage(str, true);
+        if(window.localStorage.getItem("Lang") !== str){
+            changeLanguage(str, true);
+        }
     }
 }
 function changeLanguage(Lang, notify = false) {
@@ -102,13 +104,7 @@ function font(lang) {
     $("#hitokoto").attr("style", "font-family: '" + font[lang] + "', cursive;")
 
 }
-if (('onhashchange' in window) && ((typeof document.documentMode === 'undefined') || document.documentMode == 8)) {
-    window.onhashchange = hashChange;
-} else {
-    setInterval(function () {
-        let ischanged = isHashChanged();
-        if (ischanged) {
-            hashChange();
-        }
-    }, 150);
-}
+
+setInterval(function () {
+    hashChange();
+}, 200);
